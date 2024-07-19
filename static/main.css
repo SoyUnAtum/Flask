@@ -1,0 +1,157 @@
+body {
+    background-image: url("image2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.body-2 {
+    background-image: url("image4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* styles.css */
+.icon-user {
+    background-image: url('icons.png');
+    width: 36px; /* Ajusta el tamaño según sea necesario */
+    height: 36px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-2 {
+    background-image: url('icons2.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+
+}
+
+.icon-user-3 {
+    background-image: url('icons3.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-4 {
+    background-image: url('icons4.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-5 {
+    background-image: url('icons5.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-6 {
+    background-image: url('icons9.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+.icon-user-8 {
+    background-image: url('icono-mesa.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-10 {
+    background-image: url('actualizar-2.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+.icon-user-7 {
+    background-image: url('eliminar.png');
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+}
+
+
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    height: calc(1.5em + .70rem + 14px);
+    padding: 0; /* Eliminar cualquier relleno alrededor del ícono */
+    background-color: transparent; /* Asegurar que el fondo sea transparente */
+    border: none;
+}
+
+h1 {
+    color: #18161d;
+}
+
+h4 {
+    color: #231a24;
+}
+
+.tarea_hecha {
+    text-decoration: line-through;
+    color: #cfcfcf;
+}
+
+
+
+.title {
+    font-family: "Bebas Neue", cursive;
+    color: #cfcfcf;
+}
+
+.title-2 {
+    font-size: 1.5em; /* Ajusta el tamaño según tus necesidades */
+    font-weight: normal; /* Puedes ajustar el peso de la fuente si es necesario */
+    color: #FFFF00; /* Color del texto, ajusta según el contraste deseado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    text-align: center;
+    padding: 10px; /* Ajusta el padding si es necesario */
+    border-radius: 5px; /* Ajusta el borde redondeado si es necesario */
+    background: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+}
+
+.imagen{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.nombre {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    font-family: "Bebas Neue", cursive;
+    color: #060606;
+    background-color: #cfcfcf;
+
+}
+
+

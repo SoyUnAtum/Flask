@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .edit-section {
+            margin-top: 30px;
+        }
+        .edit-section a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .edit-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de Administración</h1>
+        <i class="button">Usuarios</i>
+        <div class="edit-section">
+            <a href="/editar-cliente" class="edit-link">Editar Usuarios</a>
+            <a href="/eliminar-cliente" class="edit-link">Eliminar Usuarios</a>
+        </div>
+
+        <i class="button">Productos</i>
+        <div class="edit-section">
+            <a href="/editar-producto" class="edit-link">Editar Productos</a>
+            <a href="/eliminar-producto" class="edit-link">Eliminar Productos</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agrega un producto</title>
+</head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static',filename='icons8.png')}}" type="image/x-icon">
+    <title>Tienda de Electronic</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("static/fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+        .estructura {
+            display: {% if mostrar_estructura %} block {% else %} none {% endif %};
+            background-color: transparent;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+/* Estilos para la estructura de la tabla */
+        .tabla-productos {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .columna {
+            width: 50%; /* Dos columnas */
+        }
+
+        .producto {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #form-agregar-producto {
+            /* Alinea el contenido del formulario a la derecha */
+            margin-top: 100px; /* Ejemplo de margen superior de 20px */
+        }
+
+        .btn-agregar-producto {
+            margin-top: 100px; /* Ajusta el margen superior para separar del contenido superior */
+            margin-right: 100px; /* Ejemplo de margen derecho de 20px */
+        }
+
+        .icon-user-2 {
+            background-image: url('static/icons8-minecraft.png');
+            width: 32px; /* Ajusta el tamaño según sea necesario */
+            height: 32px; /* Ajusta el tamaño según sea necesario */
+            display: inline-block;
+            background-size: cover; /* Ajusta el tamaño del fondo */
+            }
+
+        .icon-user-3 {
+             background-image: url('static/icons8-mine.png');
+             width: 32px; /* Ajusta el tamaño según sea necesario */
+             height: 32px; /* Ajusta el tamaño según sea necesario */
+             display: inline-block;
+             background-size: cover; /* Ajusta el tamaño del fondo */
+        }
+
+        .icon-user-4 {
+            background-image: url('static/icons8-forjar.png');
+            width: 32px; /* Ajusta el tamaño según sea necesario */
+            height: 32px; /* Ajusta el tamaño según sea necesario */
+            display: inline-block;
+            background-size: cover; /* Ajusta el tamaño del fondo */
+        }
+
+
+    </style>
+</head>
+ <body>
+<main class="container">
+        <h4 class="display-4 text-center mt-2 title">Add a Product</h4>
+        <h1 class="text-center mt-2 title-2">Añade un nuevo producto fácilmente con nuestro formulario. Sube una imagen, especifica el nombre, precio y descripción. ¡Así de sencillo!</h1>
+        <div class="row justify-content-start">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        {% if error %}
+                        <p style="color: white;">{{ error }}</p>
+                        {% endif %}
+                        <form action="/add-image-f" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <div class="icon-user-2"></div>
+                                        </span>
+                                    </div>
+                                    <input type="text" placeholder="New product" name="nombre" class="form-control" autofocus>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="icon-user-3"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" placeholder="price" name="precio" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="icon-user-4"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" placeholder="Description" name="descripcion" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="icon-user-8"></i>
+                                        </span>
+                                    </div>
+                                    <input type="number" placeholder="Stock" name="stock" class="form-control">
+                                </div>
+                                <label for="exampleFormControlFile1">Selecciona una imagen</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imagen">
+                                <div class="card-body text-center" role="group">
+                                    <form method="POST">
+                                        <button type="submit" name="mostrar" class="btn btn-primary">
+                                            <span class="icon-user-10"></span>
+                                        </button>
+                                    </form>
+                                    <button type="submit" formaction="/acceder" class="btn btn-secondary ml-2">
+                                        <span class="icon-user-7"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+    <div class="estructura">
+        {% if error %}
+        <p style="color: white;">{{ error }}</p>
+        {% endif %}
+        <img class="imagen" src="data:image/jpeg;base64,{{ imagen_data }}">
+        <div class="nombre">
+            <p>{{ nombre }}</p>
+            <p>{{ precio }}</p>
+            <p>{{ descripcion }}</p>
+        </div>
+        <form action="/add-product" method="post" enctype="multipart/form-data" class="mt-3">
+            <input type="hidden" name="nombre" value="{{ nombre }}" class="form-control">
+            <input type="hidden" name="precio" value="{{ precio }}" class="form-control">
+            <input type="hidden" name="descripcion" value="{{ descripcion }}" class="form-control">
+            <input type="hidden" name="imagenes" value="{{ imagen }}">
+            <input type="hidden" name="stock" value="{{ stock }}">
+            <div class="d-grid">
+                <button type="submit" name="agregar" class="btn btn-primary">
+                    <span class="icon-user-6 me-2"></span> Agregar Producto
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

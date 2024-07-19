@@ -1,0 +1,98 @@
+.title {
+    font-family: "Anton", cursive;
+}
+
+.icon-user {
+    background-image: url('buscar.png');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-size: cover;
+}
+.icon-user-1 {
+    background-image: url('lunar.png');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-size: cover;
+}
+.icon-user-2 {
+        background-image: url('dom.png');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-size: cover;
+}
+.icon-user-3 {
+    background-image: url('cerrado.png');
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-user-4 {
+    background-image: url('cliente.png');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-user-5 {
+    background-image: url('comision.png');
+    width: 35px;
+    height: 37px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-user-8 {
+    background-image: url('eliminar-2.png'); /* Asegúrate de que esta ruta sea correcta */
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+.icon-user-9 {
+    background-image: url('icons9.png'); /* Asegúrate de que esta ruta sea correcta */
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+.icon-user-11 {
+    background-image: url('perfil.png'); /* Asegúrate de que esta ruta sea correcta */
+    width: 35px; /* Ajusta el tamaño según sea necesario */
+    height: 37px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+.icon-user-12 {
+    background-image: url('admin.png'); /* Asegúrate de que esta ruta sea correcta */
+    width: 35px; /* Ajusta el tamaño según sea necesario */
+    height: 37px; /* Ajusta el tamaño según sea necesario */
+    display: inline-block;
+    background-size: cover; /* Ajusta el tamaño del fondo */
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+.precio-mediano {
+    font-size: 1.5em; /* Tamaño de fuente mediano */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita para destacar */
+    margin-top: 10px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+    display: inline-block; /* Mostrar en línea con otros elementos, pero permite márgenes */
+    padding: 5px 10px; /* Relleno alrededor del texto */
+    background-color: #f0f0f0; /* Color de fondo claro */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Alineación central del texto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para dar un efecto de elevación */
+}

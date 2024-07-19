@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>perfil</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .perfil-info {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .pedido-info {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f3f3f3;
+        }
+        .no-pedidos {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+{% if datos %}
+    <div class="perfil-info">
+        <h2>Perfil de {{ datos.nombre }}</h2>
+        <p><strong>ID:</strong> {{ datos.id }}</p>
+        <p><strong>Edad:</strong> {{ datos.edad }}</p>
+        <p><strong>Fecha de Registro:</strong> {{ datos.fecha_de_registro.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        <hr>
+
+        {% if datos.pedidos %}
+            <h3>Pedidos:</h3>
+            {% for pedido in datos.pedidos %}
+                <div class="pedido-info">
+                    <p><strong>Fecha de Pedido:</strong> {{ pedido.fecha_de_registro.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <p><strong>Estado:</strong> {{ pedido.estado }}</p>
+                    <p><strong>cantidad:</strong> {{ pedido.cantidad }}</p>
+                    <form action="/eliminar-pedido" method="GET">
+                        <input type="hidden" name="id_pedido" value="{{ pedido.id }}">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-pedidos">No hay pedidos asociados para esta persona.</p>
+        {% endif %}
+    </div>
+{% endif %}
+</body>
+
+</body>
+</html>

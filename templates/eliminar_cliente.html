@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Usuario por ID</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+   <div class="container">
+        <h1>Listado de Clientes</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Password</th>
+                    <th>Fecha de Registro</th>
+                    <th>Pedidos pendientes</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.id }}</td>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.edad }}</td>
+                        <td>{{ cliente.password }}</td>
+                        <td>{{ cliente.fecha_de_registro }}</td>
+                        {% set ns = namespace(contador=0) %}
+                        {% for pedido in pedidos %}
+                            {% if pedido.cliente_id == cliente.id  %}
+                                {% set ns.contador = ns.contador + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                        <td>{{ns.contador}}</td>
+                        <td>
+                            <form action="/eliminar-cliente" method="POST">
+                                <input type="hidden" name="cliente_id" value="{{ cliente.id }}">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Eliminar Cliente por ID</h2>
+        <form action="/eliminar-cliente" method="POST">
+            <label for="clienteId">Ingrese ID del Cliente a Eliminar:</label>
+            <input type="text" id="clienteId" name="cliente_id" placeholder="ID del Cliente">
+            <button type="submit">Eliminar</button>
+        </form>
+
+        <a href="/acceder">Volver al Inicio</a>
+    </div>
+</body>
+</html>

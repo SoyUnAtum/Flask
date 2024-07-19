@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static',filename='icons8.png')}}" type="image/x-icon">
+    <title>Tienda de Electronic</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        .title {
+            font-family: "Anton", cursive;
+            color: #000000;
+        }
+    </style>
+
+
+
+</head>
+ <body>
+    <main class="container p-4">
+        <h1 class="display-4 text-center mt-4 title">Sign In Shop'store</h1>
+        <div class="row">
+            <div class="col-md-4 offset-md-4 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                    {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                    {% endif %}
+                    <form action="/crear" method="post">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" placeholder="Name" name="nombre" class="form-control" autofocus>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon-user-2 fas fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" placeholder="Password" name="contraseña" class="form-control" autofocus>
+                                </div>
+                                <div class="card-body text-center" role="group" aria-label="Botones">
+                                    <button type="submit" class="btn btn-primary">Log In</button>
+                                    <button type="button" class="btn btn-secondary" onclick="window.location.href='/signup'">Sign Up</button>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+ </body>
+

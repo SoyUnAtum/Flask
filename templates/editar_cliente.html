@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cliente</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<body>
+    <div class="container">
+        <h1>Listado de Clientes</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>edad</th>
+                    <th>contraseña</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                {% for cliente in clientes %}
+                <tr>
+                    <form action="/editar-cliente" method="POST" style="display: inline;">
+                        <td>{{ cliente.id }}</td>
+                            <td><input type="text" name="nombre" placeholder="{{cliente.nombre}}" readonly></td>
+                            <td><input type="text" name="edad" placeholder="{{cliente.edad}}"></td>
+                            <td><input type="text" name="contraseña" placeholder="{{cliente.password}}"></td>
+                            <input type="hidden" name="cliente_id" value="{{ cliente.id }}">
+                        <td>
+                        <button type="submit">Guardar</button>
+                    </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/acceder">Volver al Inicio</a>
+    </div>
+</body>
+</html>
+

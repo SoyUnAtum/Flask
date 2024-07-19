@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Editar Producto</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <form action="/editar-producto" method="POST" style="display: inline;">
+                <td>{{ producto.id }}</td>
+                <td><input type="text" name="nombre" placeholder="{{ producto.nombre }}"></td>
+                <td><input type="text" name="precio" placeholder="{{ producto.precio }}"></td>
+                <td><input type="text" name="stock" placeholder="{{ producto.stock }}"></td>
+                <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                <td><button type="submit">Guardar</button></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
